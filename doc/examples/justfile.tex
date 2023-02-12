@@ -1,0 +1,9 @@
+PREVIEW_INPUT_FILE := ""
+PREVIEW_TMPDIR:= ""
+
+build:
+  bash -c 'cd {{PREVIEW_TMPDIR}} && pdflatex -interaction=nonstop {{PREVIEW_INPUT_FILE}}'
+
+view:
+    zathura {{without_extension(PREVIEW_TMPDIR)}}.pdf
+

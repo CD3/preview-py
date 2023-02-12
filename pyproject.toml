@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "preview"
+version = "0.1.0"
+description = ""
+authors = ["CD Clark III <clifton.clark@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+typer = "^0.7.0"
+pymsgbox = "^1.0.9"
+watchdog = "^2.2.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+preview = "preview.__main__:app"
