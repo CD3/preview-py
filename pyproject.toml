@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "filepreviewer"
-version = "4.0-rc"
+version = "4.0"
 description = ""
 authors = ["CD Clark III <clifton.clark@gmail.com>"]
 readme = "README.md"
