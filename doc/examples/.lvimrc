@@ -1,0 +1,1 @@
+nmap <localleader>p :AsyncRun poetry run preview --log-file preview.log %<CR>

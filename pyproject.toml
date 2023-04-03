@@ -1,9 +1,10 @@
 [tool.poetry]
-name = "preview"
-version = "0.1.0"
+name = "filepreviewer"
+version = "4.0-rc"
 description = ""
 authors = ["CD Clark III <clifton.clark@gmail.com>"]
 readme = "README.md"
+packages = [{include = "preview"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"

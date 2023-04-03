@@ -1,7 +1,3 @@
-from watchdog.events import FileSystemEventHandler
-from pymsgbox import *
-from .utils import *
-import logging
 import pathlib
 from typing import Callable
 
@@ -11,7 +7,7 @@ class FileMonitor:
         self.__path = path
 
     async def run_if_modified(self, func:Callable):
-        '''Run 
+        '''Run the specified callable if the file being monitored has been modified.
         '''
         if self.__last_modified != self.__path.stat().st_mtime:
             self.__last_modified = self.__path.stat().st_mtime

@@ -1,9 +1,9 @@
 PREVIEW_INPUT_FILE := ""
 PREVIEW_TMPDIR:= ""
 
-build:
+preview-build:
     pandoc {{PREVIEW_INPUT_FILE}} -o {{PREVIEW_TMPDIR}}/out.pdf
 
-view:
+preview-view:
     zathura {{PREVIEW_TMPDIR}}/out.pdf
 
