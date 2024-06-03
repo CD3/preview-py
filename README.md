@@ -98,3 +98,7 @@ a `preview-build` and `preview-view` recipe, as well as two variables named `PRE
 To use the make handler, create a file named `makefile.<file_extension>` that
 defines the `preview-build` and `preview-view` targets. Preview will set two variables
 named `PREVIEW_INPUT_FILE` and `PREVIEW_TMPDIR` that contain the name of the file being previewed, and the path to a temporary directory that is created for the hander to use.
+
+# Dedicated Commands
+
+The `preview` install includes some commands dedicated to specific tools. For example, `preview-gnuplot` can be used to preview gnuplot scripts. These didicated commands are written for source files that are combersom or flakey to preview with the make/just handlers.
