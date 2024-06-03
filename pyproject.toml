@@ -19,3 +19,4 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 preview = "preview.__main__:app"
+preview-gnuplot = "preview.__main__:app2"

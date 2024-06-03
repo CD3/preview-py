@@ -75,9 +75,12 @@ class BaseHandler:
                             + output[0].decode("utf-8")
                             + "\n"
                         )
-                    return
+                    break
                 except asyncio.exceptions.TimeoutError:
                     output = await input_file_monitor.run_if_modified(build_and_wait)
+
+            await self.shutdown()
+            return
 
 
 class JustHandler(BaseHandler):
@@ -114,6 +117,16 @@ class JustHandler(BaseHandler):
             view_recipe = "preview-view"
         vars = [f"{k}='{self.environ[k]}'" for k in self.environ]
         proc = await async_run("just", "-f", self.justfile, *vars, view_recipe)
+        return proc
+
+    async def shutdown(self):
+        proc = await async_run("just", "-f", self.justfile, "--list")
+        output = await proc.communicate()
+        shutdown_recipe = "shutdown"
+        if "preview-shutdown" in output[0].decode("utf-8"):
+            view_recipe = "preview-shutdown"
+        vars = [f"{k}='{self.environ[k]}'" for k in self.environ]
+        proc = await async_run("just", "-f", self.justfile, *vars, shutdown_recipe)
         return proc
 
 
