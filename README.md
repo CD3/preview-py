@@ -101,4 +101,4 @@ named `PREVIEW_INPUT_FILE` and `PREVIEW_TMPDIR` that contain the name of the fil
 
 # Dedicated Commands
 
-The `preview` install includes some commands dedicated to specific tools. For example, `preview-gnuplot` can be used to preview gnuplot scripts. These didicated commands are written for source files that are combersom or flakey to preview with the make/just handlers.
+The `preview` install includes some commands dedicated to specific tools. For example, `preview-gnuplot` can be used to preview gnuplot scripts. These dedicated commands are written for source files that are combersom or flaky to preview with the make/just handlers.
