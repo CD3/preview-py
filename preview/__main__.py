@@ -118,8 +118,14 @@ def preview_gnupot(input_file: pathlib.Path):
 
             try:
                 i = await asyncio.wait_for(stdin.readline(), 0.01)
+
                 if i.decode().strip().lower() == "q":
                     alive = False
+                else:
+                    gnuplot_proc.stdin.write(i)
+                    gnuplot_proc.stdin.write(f"load '{script}'\n".encode())
+                    await gnuplot_proc.stdin.drain()
+
             except asyncio.TimeoutError:
                 pass
 
